@@ -6,8 +6,9 @@ import java.util.stream.*;
 public class TeamStats {
 
     public static void main(String[] args) throws IOException {
+
         // reads csv file and parses data
-        List<Map<String, String>> teamStats = readCSV("team_stats_2003_2023.csv");
+        List<Map<String, String>> teamStats = readCSV("src/team_stats_2003_2023.csv");
     }
 
     // method to read csv file and return data as a list of maps
@@ -20,10 +21,11 @@ public class TeamStats {
         // split the header line with a comma
         String[] headers = lines.get(0).split(",");
 
-        // process each line as a map with column name
+        // Process each line as a map with column names
         records = lines.stream()
-                .skip(1) // skip the header row
+                .skip(1) // Skip the header row
                 .map(line -> line.split(",")) // split each line by comma
+                .filter(values -> values.length == headers.length) // filter rows with correct length
                 .map(values -> {
                     Map<String, String> record = new HashMap<>();
                     for (int i = 0; i < headers.length; i++) {

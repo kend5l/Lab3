@@ -9,7 +9,7 @@ public class TeamStats {
 
         // reads csv file and parses data
         List<Map<String, String>> teamStats = readCSV("src/team_stats_2003_2023.csv");
-        TeamStatsGUI gui = new TeamStatsGUI();
+        TeamStatsGUI gui = new TeamStatsGUI(teamStats);
 
     }
 

@@ -59,7 +59,7 @@ public class TeamStatsGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Create and display the TableAndDetails window
-                new TableandDetails(teamStats);
+                new TablePanel(teamStats);
             }
         });
 
